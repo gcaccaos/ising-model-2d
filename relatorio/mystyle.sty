@@ -1,0 +1,65 @@
+\ProvidesPackage{mystyle}
+
+\usepackage[utf8]{inputenc}
+\usepackage{cuted}
+\usepackage{siunitx}
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage{multicol}
+\usepackage{float}
+
+\usepackage[brazilian]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio = 1:1, top = 32mm, columnsep = 20pt]{geometry} % Document margins
+\usepackage[small, labelfont = bf,up, textfont = it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Estudo do modelo de Ising em duas dimensões via método de Monte Carlo} % Custom header text
+\fancyfoot[RO, LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{subcaption}
+
+\usepackage{lettrine}
+
+\usepackage{amsmath}
+\sisetup{
+        detect-mode             = true,
+        detect-display-math     = true,
+        detect-family           = true,
+        detect-inline-family    = math,
+        detect-shape            = true,
+        detect-weight           = true,
+        detect-inline-weight    = math,
+        binary-units            = true
+}
+
+\renewcommand\arraystretch{2}
+
+\setlength{\droptitle}{-4\baselineskip}
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\end{center}}
