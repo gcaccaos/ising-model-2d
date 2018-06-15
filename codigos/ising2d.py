@@ -2,6 +2,7 @@ from numpy import exp, zeros
 from numpy.random import choice, permutation, uniform
 from numba import jit
 from ipywidgets import interact
+from matplotlib.pyplot import subplots, imshow, axis, show
 
 @jit
 def ising_update(spins, i, j, T, J, h):
@@ -61,7 +62,7 @@ def magnetization_per_site(spins):
     return m
 
 @jit
-def energy_per_site(spins):
+def energy_per_site(spins, J, h):
     L = spins.shape[0]
     E = 0
     
@@ -77,12 +78,12 @@ def energy_per_site(spins):
 
 @jit
 def display_spins(ax, spins):
-    ax.imshow(spins, cmap = plt.cm.binary)
+    ax.imshow(spins, cmap = 'binary')
     ax.axis('off')
-    plt.show()
+    show()
 
 def display_ising_sequence(images):
     def update_display(step = (0, len(images) - 1)):
-        fig, ax = plt.subplots()
+        fig, ax = subplots()
         display_spins(ax, images[step])
     return interact(update_display)
