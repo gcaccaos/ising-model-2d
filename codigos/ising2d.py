@@ -1,6 +1,7 @@
 from numpy import exp, zeros
 from numpy.random import choice, permutation, uniform
 from numba import jit
+from ipywidgets import interact
 
 @jit
 def ising_update(spins, i, j, T, J, h):
@@ -50,3 +51,38 @@ def ising_step(spins, T, J, h):
             ising_update(spins, i, j, T, J, h)
     
     return spins
+
+@jit
+def magnetization_per_site(spins):
+    L = spins.shape[0]
+    M = spins.sum()
+    m = M/(L**2)
+    
+    return m
+
+@jit
+def energy_per_site(spins):
+    L = spins.shape[0]
+    E = 0
+    
+    for i in range(L):
+        for j in range(L):
+            DeltaE = 2*spins[i, j]*(J/4*(spins[(i - 1)%L, j] + spins[(i + 1)%L, j] + # dividido por 4 para nao constar o mesmo spin duas vezes
+                                       spins[i, (j - 1)%L] + spins[i, (j + 1)%L]) + h)
+            E -= DeltaE
+    
+    e = E/(L**2)
+    
+    return e
+
+@jit
+def display_spins(ax, spins):
+    ax.imshow(spins, cmap = plt.cm.binary)
+    ax.axis('off')
+    plt.show()
+
+def display_ising_sequence(images):
+    def update_display(step = (0, len(images) - 1)):
+        fig, ax = plt.subplots()
+        display_spins(ax, images[step])
+    return interact(update_display)
