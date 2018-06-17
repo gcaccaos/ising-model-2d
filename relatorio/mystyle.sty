@@ -4,9 +4,10 @@
 \usepackage{cuted}
 \usepackage{siunitx}
 
+\usepackage{palatino}
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\linespread{1.2} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
 \usepackage{multicol}
@@ -25,17 +26,11 @@
 \renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
 
-\usepackage{titlesec} % Allows customization of titles
-\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
-\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
-\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
-\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
-
 \usepackage{fancyhdr} % Headers and footers
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Estudo do modelo de Ising em duas dimensões via método de Monte Carlo} % Custom header text
+\fancyhead[C]{Estudo do modelo de Ising em 2D via método de Monte Carlo} % Custom header text
 \fancyfoot[RO, LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -63,3 +58,6 @@
 \setlength{\droptitle}{-4\baselineskip}
 \pretitle{\begin{center}\Huge\bfseries}
 \posttitle{\end{center}}
+
+\usepackage{lipsum}
+\usepackage{layouts}

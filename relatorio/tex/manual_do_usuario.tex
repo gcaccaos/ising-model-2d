@@ -1,1 +1,7 @@
 \section{Manual do usuário}
+
+Os códigos criados para obter os gráficos deste projeto estão no arquivo de notebook para o Jupyter, "GabrielFariasCaccaos_Projeto4.ipynb". Para executá-lo, é necessária a versão 3.6.5 (ou superior) de Python e os módulos matplotlib, numpy, numba e ipywidgets (o qual é parte do IPython). Além disso, é necessário que o arquivo "ising2d.py" esteja no mesmo diretório, uma vez que contém as funções criadas para as simulações e suas ilustrações.
+
+A função "ising_step" efetua um passo na evolução de uma configuração de spins atraves do algoritmo de Metropolis para os valores de $T$, $J$ e $h$ fornecidos. O passo de Monte Carlo do algoritmo de Metropolis, por sua vez, é definido na função "ising_update".
+
+Assim, o usuário pode manipular as variáveis $L$, $J$, $h$, $Nsteps$ e $T$, além da própria configuração inicial (primeiro índice do vetor 'steps'), a fim de variar os resultados das células do notebook.

@@ -6,6 +6,23 @@ from matplotlib.pyplot import subplots, imshow, axis, show
 
 @jit
 def ising_update(spins, i, j, T, J, h):
+    '''Funcao para aplicar o passo de Monte Carlo do algoritmo de Metropolis.
+
+    Parametros
+    ----------
+    spins: ndarray
+        Configuracao de spins.
+    i: int
+        Indice i do spin.
+    j: int
+        Indice j do spin.
+    T: float
+        Temperatura do banho termico.
+    J: float
+        Constante que caracteriza a interacao entre dois spins vizinhos.
+    h: float
+        Constante que caracteriza a interacao dos spins com o campo magnetico externo.'''
+
     kB = 1 # constante de Boltzmann (assim, a temperatura e dada em [T]/[kB])
     L = spins.shape[0]
     
@@ -23,7 +40,7 @@ def ising_update(spins, i, j, T, J, h):
 
 @jit
 def ising_step(spins, T, J, h):
-    '''Simula configuracoes de spin atraves do algoritmo de Metropolis. Sao realizados passos de Monte Carlo sobre os spins, simulando a interacao com o banho termico. Esse processo e repetido N vezes.
+    '''Simula configuracoes de spin atraves do algoritmo de Metropolis. E realizado um passo de Monte Carlo sobre os spins, simulando a interacao com o banho termico.
     
     Parametros
     ----------
@@ -38,8 +55,8 @@ def ising_step(spins, T, J, h):
     
     Retorna
     -------
-    ndarray
-        Array de N configuracoes de spin para o grid de tamanho L por L.'''
+    spins: ndarray
+        Nova configuracao de spins.'''
     
     # Ordem aleatoria para varrer os spins do grid
     L = spins.shape[0]
@@ -55,6 +72,8 @@ def ising_step(spins, T, J, h):
 
 @jit
 def magnetization_per_site(spins):
+   '''Funcao para calcular a magnetizacao por sitio de uma dada configuracao de spins.'''
+
     L = spins.shape[0]
     M = spins.sum()
     m = M/(L**2)
@@ -63,6 +82,8 @@ def magnetization_per_site(spins):
 
 @jit
 def energy_per_site(spins, J, h):
+    '''Funcao para calcular a energia por sitio de uma dada configuracao de spins.'''
+
     L = spins.shape[0]
     E = 0
     
@@ -78,11 +99,15 @@ def energy_per_site(spins, J, h):
 
 @jit
 def display_spins(ax, spins):
+    '''Funcao para gerar imagem de spins.'''
+
     ax.imshow(spins, cmap = 'binary')
     ax.axis('off')
     show()
 
 def display_ising_sequence(images):
+    '''Funcao para criar versao interativa de uma sequencia de imagens de spins.'''
+
     def update_display(step = (0, len(images) - 1)):
         fig, ax = subplots()
         display_spins(ax, images[step])
