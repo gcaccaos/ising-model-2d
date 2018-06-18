@@ -17,23 +17,38 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{giordano}
 \babel@aux{brazilian}{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{section.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Simula\IeC {\c c}\IeC {\~o}es}{2}{section.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}todos computacionais}{2}{subsection.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Resultados}{2}{subsection.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Manual do usu\IeC {\'a}rio}{2}{section.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Configura\IeC {\c c}\IeC {\~o}es inicial (esquerda) e final (direita) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$, $h = 0$ e $T/k_B = 1$. Para este exemplo, foram realizados $2000$ passos de Monte Carlo no algoritmo de Metropolis. O sistema \IeC {\'e} iniciado com uma configura\IeC {\c c}\IeC {\~a}o de spins aleat\IeC {\'o}ria e atinge um estado final com regi\IeC {\~o}es compactas de mesma magnetiza\IeC {\c c}\IeC {\~a}o.\relax }}{3}{figure.caption.1}}
+\newlabel{eq:Gibbs}{{2}{1}{Introdução}{equation.1.2}{}}
+\citation{giordano}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Exemplo de uma configura\IeC {\c c}\IeC {\~a}o de spins em 2 dimens\IeC {\~o}es.\relax }}{2}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:evolucao-grid-100x100}{{1}{3}{Configurações inicial (esquerda) e final (direita) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$, $h = 0$ e $T/k_B = 1$. Para este exemplo, foram realizados $2000$ passos de Monte Carlo no algoritmo de Metropolis. O sistema é iniciado com uma configuração de spins aleatória e atinge um estado final com regiões compactas de mesma magnetização.\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclus\IeC {\~o}es}{3}{section.4}}
+\newlabel{fig:spin2d}{{1}{2}{Exemplo de uma configuração de spins em 2 dimensões.\relax }{figure.caption.1}{}}
+\newlabel{eq:energia}{{3}{2}{Introdução}{equation.1.3}{}}
+\newlabel{eq:particao}{{4}{2}{Introdução}{equation.1.4}{}}
+\newlabel{eq:funcao-prob}{{5}{2}{Introdução}{equation.1.5}{}}
+\newlabel{eq:magnetizacao2d}{{6}{2}{Introdução}{equation.1.6}{}}
+\newlabel{eq:onsager}{{7}{3}{Introdução}{equation.1.7}{}}
+\newlabel{eq:temp-crit}{{8}{3}{Introdução}{equation.1.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Simula\IeC {\c c}\IeC {\~o}es}{3}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}todos computacionais}{3}{subsection.2.1}}
+\newlabel{eq:energia}{{2.1}{3}{Métodos computacionais}{subsection.2.1}{}}
+\newlabel{eq:deltaE}{{9}{3}{Métodos computacionais}{equation.2.9}{}}
+\newlabel{eq:magnetizacao-simulacao}{{10}{3}{Métodos computacionais}{equation.2.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Configura\IeC {\c c}\IeC {\~o}es inicial (esquerda) e final ap\IeC {\'o}s $2000$ passos de Monte Carlo (direita) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$, $h = 0$ e $T/k_B = 1$.\relax }}{4}{figure.caption.2}}
+\newlabel{fig:evolucao-grid-100x100}{{2}{4}{Configurações inicial (esquerda) e final após $2000$ passos de Monte Carlo (direita) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$, $h = 0$ e $T/k_B = 1$.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Resultados}{4}{subsection.2.2}}
+\citation{scipy}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o da magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e da energia por s\IeC {\'\i }tio (abaixo) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$ a cada passo de Monte Carlo para alguns valores de temperatura pr\IeC {\'o}ximos \IeC {\`a} temperatura cr\IeC {\'\i }tica (equa\IeC {\c c}\IeC {\~a}o \ref  {eq:temp-crit}).\relax }}{5}{figure.caption.3}}
+\newlabel{fig:evolucao-mc-temperaturas}{{3}{5}{Evolução da magnetização por sítio (acima) e da energia por sítio (abaixo) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$ a cada passo de Monte Carlo para alguns valores de temperatura próximos à temperatura crítica (equação \ref {eq:temp-crit}).\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Manual do usu\IeC {\'a}rio}{5}{section.3}}
 \bibstyle{unsrt}
 \bibdata{./bib/refs}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o da magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e da energia por s\IeC {\'\i }tio (abaixo) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$, a cada passo de Monte Carlo, para alguns valores de temperatura pr\IeC {\'o}ximos \IeC {\`a} temperatura cr\IeC {\'\i }tica (eq).\relax }}{4}{figure.caption.2}}
-\newlabel{fig:evolucao-mc-temperaturas}{{2}{4}{Evolução da magnetização por sítio (acima) e da energia por sítio (abaixo) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$, a cada passo de Monte Carlo, para alguns valores de temperatura próximos à temperatura crítica (eq).\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Curvas de magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e energia por s\IeC {\'\i }tio (abaixo) em fun\IeC {\c c}\IeC {\~a}o da temperatura de grids com $10 \times 10$, $20 \times 20$ e $30 \times 30$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$.\relax }}{5}{figure.caption.3}}
-\newlabel{fig:simulacao-3-larguras}{{3}{5}{Curvas de magnetização por sítio (acima) e energia por sítio (abaixo) em função da temperatura de grids com $10 \times 10$, $20 \times 20$ e $30 \times 30$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$.\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o da magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e da energia por s\IeC {\'\i }tio (abaixo) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 1$, a cada passo de Monte Carlo, para alguns valores de temperatura pr\IeC {\'o}ximos \IeC {\`a} temperatura cr\IeC {\'\i }tica (eq).\relax }}{6}{figure.caption.4}}
-\newlabel{fig:evolucao-h=1-mc-temperaturas}{{4}{6}{Evolução da magnetização por sítio (acima) e da energia por sítio (abaixo) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$ e $h = 1$, a cada passo de Monte Carlo, para alguns valores de temperatura próximos à temperatura crítica (eq).\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Curvas de magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e energia por s\IeC {\'\i }tio (abaixo) em fun\IeC {\c c}\IeC {\~a}o da temperatura de um grid com $10 \times 10$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$, $0.2$ e $1$.\relax }}{7}{figure.caption.5}}
-\newlabel{fig:simulacao-h}{{5}{7}{Curvas de magnetização por sítio (acima) e energia por sítio (abaixo) em função da temperatura de um grid com $10 \times 10$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$, $0.2$ e $1$.\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Curvas de magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e energia por s\IeC {\'\i }tio (abaixo) em fun\IeC {\c c}\IeC {\~a}o da temperatura de grids com $10 \times 10$, $20 \times 20$ e $30 \times 30$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$.\relax }}{6}{figure.caption.4}}
+\newlabel{fig:simulacao-3-larguras}{{4}{6}{Curvas de magnetização por sítio (acima) e energia por sítio (abaixo) em função da temperatura de grids com $10 \times 10$, $20 \times 20$ e $30 \times 30$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$.\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Evolu\IeC {\c c}\IeC {\~a}o da magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e da energia por s\IeC {\'\i }tio (abaixo) de um grid com $100 \times 100$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 1$, a cada passo de Monte Carlo, para alguns valores de temperatura pr\IeC {\'o}ximos \IeC {\`a} temperatura cr\IeC {\'\i }tica (eq).\relax }}{7}{figure.caption.5}}
+\newlabel{fig:evolucao-h=1-mc-temperaturas}{{5}{7}{Evolução da magnetização por sítio (acima) e da energia por sítio (abaixo) de um grid com $100 \times 100$ spins com condições periódicas de contorno e $J = 1$ e $h = 1$, a cada passo de Monte Carlo, para alguns valores de temperatura próximos à temperatura crítica (eq).\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclus\IeC {\~o}es}{7}{section.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Curvas de magnetiza\IeC {\c c}\IeC {\~a}o por s\IeC {\'\i }tio (acima) e energia por s\IeC {\'\i }tio (abaixo) em fun\IeC {\c c}\IeC {\~a}o da temperatura de um grid com $10 \times 10$ spins com condi\IeC {\c c}\IeC {\~o}es peri\IeC {\'o}dicas de contorno e $J = 1$ e $h = 0$, $0.2$ e $1$.\relax }}{8}{figure.caption.6}}
+\newlabel{fig:simulacao-h}{{6}{8}{Curvas de magnetização por sítio (acima) e energia por sítio (abaixo) em função da temperatura de um grid com $10 \times 10$ spins com condições periódicas de contorno e $J = 1$ e $h = 0$, $0.2$ e $1$.\relax }{figure.caption.6}{}}

@@ -31,7 +31,7 @@ def ising_update(spins, i, j, T, J, h):
                                spins[i, (j - 1)%L] + spins[i, (j + 1)%L]) + h)
 
     # Se Eflip < 0, flipa o spin; caso contrario, aplica-se o passo de Monte Carlo
-    if DeltaE < 0:
+    if DeltaE <= 0:
         spins[i, j] *= -1
     else:
         Pflip = exp(- DeltaE/(kB*T)) # probabilidade de flipar o spin
@@ -72,7 +72,7 @@ def ising_step(spins, T, J, h):
 
 @jit
 def magnetization_per_site(spins):
-   '''Funcao para calcular a magnetizacao por sitio de uma dada configuracao de spins.'''
+    '''Funcao para calcular a magnetizacao por sitio de uma dada configuracao de spins.'''
 
     L = spins.shape[0]
     M = spins.sum()

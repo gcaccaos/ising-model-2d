@@ -1,5 +1,53 @@
 \section{Introdução}
 
-\lettrine[lines = 3]{O} modelo de Ising...
+O modelo de Ising consiste de uma abordagem estatística para investigar as propriedades macroscópicas de sistemas físicos em $1$, $2$ ou $3$ dimensões compostos de diversas partículas com spin ($\sigma = \pm 1$ apenas). Em outras palavras, é um modelo que descreve o fenômeno emergente do magnetismo macroscópico a partir do agrupamento de partículas que possuem spin. Um exemplo de configuração de spins bidimensional é mostrada na figura \ref{fig:spin2d}.
 
-\lipsum[2-4]
+\begin{figure}[ht]
+\centering
+\begin{equation}
+\begin{matrix}
+\downarrow & \uparrow & \downarrow & \uparrow \\
+\downarrow & \downarrow & \uparrow & \downarrow \\
+\uparrow & \uparrow & \uparrow & \uparrow \\
+\uparrow & \uparrow & \downarrow & \uparrow
+\end{matrix}
+\end{equation}
+\caption{\label{fig:spin2d}Exemplo de uma configuração de spins em 2 dimensões.}
+\end{figure}
+
+Nessa escala, o sistema é governado, basicamente, por dois princípios fundamentais: a minimização da energia e a maximização da entropia. A competição entre esses dois fatores é mediada pela temperatura, determinando qual será mais dominante. Essa competição é descrita, matematicamente, distribuição de Gibbs,
+\begin{equation}\label{eq:Gibbs}\cite{giordano}
+P\left(\alpha\right) \sim \exp\left(- \frac{E_{\alpha}}{k_B T}\right)\text{,}
+\end{equation}
+a qual determina a probabilidade de ocorrerem mudanças de estados dado que o sistema está no estado $\alpha$, com energia $E_{\alpha}$.
+
+Por exemplo, para um sistema bidimensional, a energia do sistema ($E$) depende da energia de interação entre todos os pares de spins vizinhos e da energia de interação de cada spin com o campo magnético externo, além da configuração de spins em si. De forma simplificada, isso pode ser traduzido na equação
+\begin{equation}\label{eq:energia}
+E = - J \sum _{\langle i,j \rangle} \sigma_ i \sigma_ j - h \sum _i \sigma _i\text{,}
+\end{equation}
+em que $J$ é uma constante que define a intensidade da interação entre pares de spins vizinhos (representados por $\langle i, j \rangle$) e $h$ é uma constante associada à intensidade da interação de cada spin com o campo magnético externo. São feitas simplificações na medida em que é atribuído um mesmo valor, $J$, para a interação entre todos os pares de spins, embora esse valor pudesse ser diferente para cada par de spins. Analogamente, poderia ser escolhido um valor $h_i$ específico para cada spin.
+
+Dessa forma, a função de partição do sistema ($Z$) é dada por
+\begin{equation}\label{eq:particao}
+Z\left(T, J, h, L\right) = \sum _{\alpha} \exp\left(-\beta E_{\alpha}\right)\text{,}
+\end{equation}
+na qual o somatório é feito sobre todos os microestados possíveis, $\alpha$, os quais possuem energia $E_{\alpha}$, e $\beta = 1/k_B T$. Isso leva à distribuição de probabilidades definida pela equação \ref{eq:probabilidade}. Assim, a média de uma grandeza associada ao sistema ($f$), é dada pela expressão
+\begin{equation}\label{eq:funcao-prob}
+\langle f \rangle = \sum _{\alpha} \exp\left(-\beta E_{\alpha}\right) f_{\alpha}\text{,}
+\end{equation}
+na qual é calculado o valor de $f_{\alpha}$ sobre cada estado possível com energia $E_{\alpha}$. Por ser calculada sobre todos os estados, essa média é chamada de média térmica de $f$.
+
+Por exemplo, para um sistema bidimensional com $L \times L$ spins, a magnetização por sítio associada a um estado $\alpha$ é dada por
+\begin{equation}\label{eq:magnetizacao2d}
+m_{\alpha} = \frac{1}{L^2} \sum ^{L - 1}_{i = 0} \sum ^{L - 1} _{j = 0} \sigma _{i, j}\text{.}
+\end{equation}
+De posse de cada valor de $m_{\alpha}$, é possível, então, calcular a média térmica da magnetização, $\langle m \rangle$, a partir da equação \ref{eq:funcao-prob}.
+
+Uma solução exata para a magnetização de um sistema bidimensional com condições periódicas de contorno em função da temperatura foi obtida por Onsager:
+\begin{equation}\label{eq:onsager}\cite{giordano}
+m = \left[1 - (\sinh 2 J \beta)^{-4}\right]^{\frac{1}{8}}\text{.}
+\end{equation}
+O resultado teórico prevê a existência de uma temperatura crítica na magnetização do sistema, a qual caracteriza um ponto de mudança de fase: se $2 \tanh ^2 (2 \beta J) = 1$, então $m = 0$; portanto, a temperatura crítica é dada por
+\begin{equation}\label{eq:temp-crit}
+T_C = \frac{2 J}{k_B \log(1 + \sqrt{2})} \approx 2.269\text{.}
+\end{equation}
